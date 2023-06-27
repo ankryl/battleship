@@ -81,6 +81,7 @@ let model = {
 		return newShipLocations;
 	},
 
+    //проверка на избежание столкновений
 	collision: function(locations) {
 		for (var i = 0; i < this.numShips; i++) {
 			var ship = this.ships[i];
@@ -155,6 +156,7 @@ function parseGuess(guess) {
 	return null;
 }
 
+//получение и передача координат
 function handleFireButton() {
 	let guessInput = document.querySelector(".guessInput");
 	let guess = guessInput.value.toUpperCase();
@@ -164,11 +166,13 @@ function handleFireButton() {
 	guessInput.value = "";
 }
 
+
+// выстрел по нажатию enter
 function handleKeyPress(e) {
 	let fireButton = document.querySelector(".fireButton");
 
 
-	e = e || window.event;
+	// e = e || window.event;
 
 	if (e.keyCode === 13) {
 		fireButton.click();
