@@ -170,10 +170,6 @@ function handleFireButton() {
 // выстрел по нажатию enter
 function handleKeyPress(e) {
 	let fireButton = document.querySelector(".fireButton");
-
-
-	// e = e || window.event;
-
 	if (e.keyCode === 13) {
 		fireButton.click();
 		return false;
