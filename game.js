@@ -12,9 +12,9 @@ let model = {
 
 //проверка попаданий и потоплен ли корабль
 	fire: function(guess) {
-		for (var i = 0; i < this.numShips; i++) {
-			var ship = this.ships[i];
-			var index = ship.locations.indexOf(guess);
+		for (let i = 0; i < this.numShips; i++) {
+			let ship = this.ships[i];
+			let index = ship.locations.indexOf(guess);
 
 			if (ship.hits[index] === "hit") {
 				view.displayMessage("Повторный выстрел по кораблю!");
@@ -37,7 +37,7 @@ let model = {
 	},
 
 	isSunk: function(ship) {
-		for (var i = 0; i < this.shipLength; i++)  {
+		for (let i = 0; i < this.shipLength; i++)  {
 			if (ship.hits[i] !== "hit") {
 				return false;
 			}
