@@ -47,8 +47,8 @@ let model = {
 
 //размещение кораблей
 	generateShipLocations: function() {
-		var locations;
-		for (var i = 0; i < this.numShips; i++) {
+		let locations;
+		for (let i = 0; i < this.numShips; i++) {
 			do {
 				locations = this.generateShip();
 			} while (this.collision(locations));
@@ -59,8 +59,8 @@ let model = {
 	},
 
 	generateShip: function() {
-		var direction = Math.floor(Math.random() * 2);
-		var row, col;
+		let direction = Math.floor(Math.random() * 2);
+		let row, col;
 
 		if (direction === 1) { // горизонтальное
 			row = Math.floor(Math.random() * this.boardSize);
@@ -70,8 +70,8 @@ let model = {
 			col = Math.floor(Math.random() * this.boardSize);
 		}
 
-		var newShipLocations = [];
-		for (var i = 0; i < this.shipLength; i++) {
+		let newShipLocations = [];
+		for (let i = 0; i < this.shipLength; i++) {
 			if (direction === 1) {
 				newShipLocations.push(row + "" + (col + i));
 			} else {
@@ -83,9 +83,9 @@ let model = {
 
     //проверка на избежание столкновений
 	collision: function(locations) {
-		for (var i = 0; i < this.numShips; i++) {
-			var ship = this.ships[i];
-			for (var j = 0; j < locations.length; j++) {
+		for (let i = 0; i < this.numShips; i++) {
+			let ship = this.ships[i];
+			for (let j = 0; j < locations.length; j++) {
 				if (ship.locations.indexOf(locations[j]) >= 0) {
 					return true;
 				}
